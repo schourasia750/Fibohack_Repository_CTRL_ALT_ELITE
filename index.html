@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriPlan - Personalized Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">NutriPlan</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#planners">Diet Planners</a>
+            <a href="#vendors">Shop Vendors</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#testimonials">Testimonials</a>
+            <button class="sign-in">Sign In</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Personalized AI Meal Planner</h1>
+        <p>Get meal plans tailored to your needs – start by selecting your dietary preferences and goals.</p>
+        <button onclick="generateMealPlan()">Generate Meal Plan</button>
+    </section>
+
+    <!-- Main Sections -->
+    <main>
+        <!-- Personalized Diet Planners -->
+        <section id="planners" class="section">
+            <h2>Personalized Diet Planners</h2>
+            <form id="plannerForm">
+                <label for="diet">Select Your Diet Type:</label>
+                <select id="diet">
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="low-carb">Low-Carb</option>
+                    <option value="balanced">Balanced</option>
+                </select>
+                <button type="button" onclick="generateCustomPlan()">Create Custom Plan</button>
+            </form>
+            <div id="mealPlanResult"></div>
+        </section>
+
+        <!-- BMI Calculator -->
+        <section id="bmi" class="section">
+            <h2>BMI Calculator</h2>
+            <form id="bmiForm">
+                <input type="number" id="height" placeholder="Height (cm)">
+                <input type="number" id="weight" placeholder="Weight (kg)">
+                <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+            </form>
+            <div id="bmiResult"></div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="section">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"NutriPlan helped me achieve my fitness goals with ease. Highly recommended!"</p>
+                <span>- User A</span>
+            </div>
+            <div class="testimonial">
+                <p>"A game-changer for meal planning!"</p>
+                <span>- User B</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NutriPlan. All rights reserved.</p>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

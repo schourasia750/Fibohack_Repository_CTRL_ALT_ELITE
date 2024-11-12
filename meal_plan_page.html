@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Meal Planner</title>
+    <link rel="stylesheet" href="meal_plan_generate.css">
+</head>
+<body>
+    <div class="meal-planner">
+        <h1>Custom Meal Planner</h1>
+        <p>Create a personalized meal plan based on your preferences.</p>
+
+        <div class="tools-bar">
+            <!-- Calories Section -->
+            <div class="column col-cal pl-0 d-flex">
+                <div class="col-6 col-md-7 px-0 px-md-3">
+                    <label for="calories" class="title">Calories</label>
+                    <div class="d-flex calories-box">
+                        <input type="number" class="calories" id="calories" placeholder="2000" aria-label="Calories">
+                        <span>kcal</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-5 pr-0 pl-1 pl-md-3">
+                    <div class="title not-sure">Not sure?</div>
+                    <button class="btn btn-calculator" onclick="openCalculator()" aria-label="Open calorie calculator">
+                        <img src="assets/images/meal-plan-generator/edit-icon.svg" alt="Calculator Icon"> Calculator
+                    </button>
+                </div>
+            </div>
+
+            <!-- Diet Type Selection -->
+            <div class="column px-4 mb-title">
+                <label for="dietType" class="title">Diet Type:</label>
+                <div class="dropdown">
+                    <select id="dietType" aria-label="Select diet type">
+                        <option value="Flexible Dieting">Flexible Dieting</option>
+                        <option value="5:2 Diet">5:2 Diet</option>
+                        <option value="Atkins Diet (Phase 1)">Atkins Diet (Phase 1)</option>
+                        <option value="Atkins Diet (Phase 2)">Atkins Diet (Phase 2)</option>
+                        <option value="Classic Bodybuilding">Classic Bodybuilding</option>
+                        <option value="Ketogenic Diet">Ketogenic Diet (beta)</option>
+                        <option value="Low Carb">Low Carb</option>
+                        <option value="Low Fat">Low Fat</option>
+                        <option value="PSMF">PSMF (beta)</option>
+                        <option value="Zone Diet">Zone Diet</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dietary Preferences Selection -->
+            <div class="column px-4 mb-title mb-title2">
+                <label for="dietPreferences" class="title">Dietary Preferences:</label>
+                <div class="dropdown">
+                    <select id="dietPreferences" aria-label="Select dietary preferences">
+                        <option value="None">I don't have any</option>
+                        <option value="Dairy Free">Dairy Free</option>
+                        <option value="Egg Free">Egg Free</option>
+                        <option value="Fish Free">Fish Free</option>
+                        <option value="Gluten Free">Gluten Free</option>
+                        <option value="Halal">Halal</option>
+                        <option value="Kosher">Kosher</option>
+                        <option value="Nut Free">Nut Free</option>
+                        <option value="Paleo">Paleo</option>
+                        <option value="Pescetarian">Pescetarian</option>
+                        <option value="Shellfish Free">Shellfish Free</option>
+                        <option value="Soy Free">Soy Free</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Plan Generation Button -->
+        <button id="createMealPlan" onclick="generateMealPlan()" aria-label="Generate meal plan">Create Meal Plan</button>
+
+        <!-- Displaying the Nutritional Values -->
+        <div id="total-nutrition">
+            <h2>Total Nutritional Value</h2>
+            <ul id="nutrition-values">
+                <li>Calories: <span id="cal-value">0 kcal</span></li>
+                <li>Protein: <span id="protein-value">0 g</span></li>
+                <li>Carbohydrates: <span id="carbs-value">0 g</span></li>
+                <li>Fats: <span id="fats-value">0 g</span></li>
+            </ul>
+            <button id="changeRecipes" onclick="changeRecipes()" aria-label="Change recipes based on preferences">Change Recipes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
